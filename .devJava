@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+#   -------------------------------------------------------------------
+#   Java
+#   -------------------------------------------------------------------
+
+export JAVA_6_HOME=$(/usr/libexec/java_home -v1.6)
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+#export JAVA_9_HOME=$(/usr/libexec/java_home -v9)
+#export JAVA_10_HOME=$(/usr/libexec/java_home -v10)
+export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+#export JAVA_12_HOME=$(/usr/libexec/java_home -v12)
+
+alias java6='export JAVA_HOME=$JAVA_6_HOME'
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+#alias java9='export JAVA_HOME=$JAVA_9_HOME'
+#alias java10='export JAVA_HOME=$JAVA_10_HOME'
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
+#alias java12='export JAVA_HOME=$JAVA_12_HOME'
+
+alias javaver='/usr/libexec/java_home -V'
+
+java8 # Default is java 8
+
+
+#   -------------------------------------------------------------------
+#   Roo
+#   -------------------------------------------------------------------
+
+export ROO_123RELEASE_HOME='~/00apps/spring-roo-1.2.3.RELEASE'
+export ROO_124RELEASE_HOME='~/00apps/spring-roo-1.2.4.RELEASE'
+
+function rmln () {
+    echo "Hello"
+    echo "rmln #1 is $1"
+    if [ -d "$1" ]; then
+      if [ -L "$1" ]; then
+        # It is a symlink!
+        # Symbolic link specific commands go here.
+        rm "$1"
+      else
+        # It's a directory!
+        # Directory command goes here.
+        rmdir "$1"
+      fi
+    fi
+}
+
+function roo200 () {
+#    export ROO_HOME="$ROO_123RELEASE_HOME"
+    java8
+    ln -Ffs "/usr/local/Cellar/spring-roo/2.0.0/bin/roo" /usr/local/bin/roo
+
+}
+#alias roo123='ln -Ffs "$ROO_123RELEASE_HOME/bin/roo.sh" /usr/local/bin/roo'
+
+
+function roo132 () {
+#    export ROO_HOME="$ROO_124RELEASE_HOME"
+#    ln -Ffs "$ROO_HOME/bin/roo.sh" /usr/local/bin/roo
+    java8
+    ln -Ffs "/usr/local/Cellar/spring-roo/1.3.2/bin/roo" /usr/local/bin/roo
+
+}
+#alias roo124='ln -Ffs "$ROO_124RELEASE_HOME/bin/roo.sh" /usr/local/bin/roo'
+#export PATH=${PATH}:$ROO_HOME/bin
+roo200
+
