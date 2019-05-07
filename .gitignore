@@ -12,3 +12,19 @@ Thumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+
+# Node
+npm-debug.log
+
+# WebStorm
+.idea/
+
+# Eclipse
+.classpath
+.project
+.settings
+
+# General
+log/
+*.log
+
