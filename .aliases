@@ -298,3 +298,5 @@ alias emptytrash=" \
     rm -rv \"/Users/paulirish/Library/Application Support/stremio/Cache\";  \
     rm -rv \"/Users/paulirish/Library/Application Support/stremio/stremio-cache\" \
 "
+
+alias brewery='brew update && brew upgrade && brew cleanup'

@@ -93,6 +93,8 @@
 	whitespace = fix
 
 [core]
+	autocrlf = input
+	editor = vim
 
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
@@ -149,11 +151,18 @@
 
 	# Detect copies as well as renames
 	renames = copies
+	renamelimit = 15000
 
 [diff "bin"]
 
 	# Use `hexdump` to diff binary files
 	textconv = hexdump -v -C
+
+[fetch]
+	prune = true
+
+[gui]
+	encoding = utf-8
 
 [help]
 
@@ -164,6 +173,9 @@
 
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+
+	renormalize = true
+	summary = true
 
 [push]
 
@@ -192,3 +204,8 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+
+[user]
+	name = noahtumlos
+	email = noah.tumlos@gmail.com
+
